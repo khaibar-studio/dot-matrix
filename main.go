@@ -38,7 +38,7 @@ func main() {
 		fmt.Println("Error creating temporary file:", err)
 		return
 	}
-	// defer os.Remove(tempFile.Name())
+	defer os.Remove(tempFile.Name())
 
 	_, err = tempFile.Write([]byte(data))
 	if err != nil {
