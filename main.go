@@ -23,11 +23,10 @@ func main() {
 	// q = character height in dots
 
 	// For example, to set 16x24 font size:
-	fontSize16x24 := "\x1B*R\x01\x10\x18" // ESC * R 1 16 24 (ESC/P font size setting)
 
 	// Sample text with escape sequences
-	data := fontSize16x24 + "Large Text\n"
-	data += "\x1B@Normal Text\n" // ESC @ (initialize) for normal text
+	// data := fontSize16x24 + "Large Text\n"
+	data := "\x1B@Normal Text\n" // ESC @ (initialize) for normal text
 	// Sample text with escape sequences
 	data += "\x1B@Hello, Dot Matrix Printer!\n" // ESC @ (initialize) and text
 	data += "\x1BEBold Text\x1BF\n"             // ESC E (bold on), text, and ESC F (bold off)
