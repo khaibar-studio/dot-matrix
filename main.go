@@ -15,19 +15,10 @@ func main() {
 
 	printerName := os.Args[1]
 
-	// ESC/P Commands to set font size
-	// ESC * m n p q
-	// m = 0, 1, 2, 3 (0=normal, 1=double height, 2=double width, 3=double height & width)
-	// n = 0 (default font), 1 (bold font), 2 (expanded font), etc.
-	// p = character width in dots
-	// q = character height in dots
-
-	// For example, to set 16x24 font size:
-	fontSize16x24 := "\x1B*R\x01\x10\x18" // ESC * R 1 16 24 (ESC/P font size setting)
-
 	// Sample text with escape sequences
-	data := fontSize16x24 + "Large Text\n"
-	data += "\x1B@Normal Text\n" // ESC @ (initialize) for normal text
+	data := "\x1B@Hello, Dot Matrix Printer!\n" // ESC @ (initialize) and text
+	data += "\x1BEBold Text\x1BF\n"             // ESC E (bold on), text, and ESC F (bold off)
+	data += "Normal Text\n"
 
 	// Create a temporary file to store the print job
 	tempFile, err := os.CreateTemp("", "print_job_*.txt")
