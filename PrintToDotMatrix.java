@@ -11,13 +11,13 @@ public class PrintToDotMatrix {
         
         try {
             // Read the text file
-            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            // BufferedReader reader = new BufferedReader(new FileReader(filePath));
             StringBuilder content = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
-            }
-            reader.close();
+            // String line;
+            // while ((line = reader.readLine()) != null) {
+                content.append("test").append("\n");
+            // }
+            // reader.close();
             
             // Send the content to the printer
             PrintWriter printerWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(printerName)));
